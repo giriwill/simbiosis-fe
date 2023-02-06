@@ -57,6 +57,7 @@ export default {
       total:0,
       totalDicek:0,
       totalPersentase:0,
+      totalPersentase2:0,
     };
   },
   mounted() {
@@ -66,11 +67,12 @@ export default {
         this.kelas = response.data;
         //cari persentase
         for(var i=0;i < this.kelas.length ; i++){
-            this.persentase[i] = (this.kelas[i].cekcount / this.kelas[i].count) * 100;
+            this.persentase[i] = parseFloat((this.kelas[i].cekcount / this.kelas[i].count) * 100).toFixed(2);
             this.total = this.total + this.kelas[i].count;
             this.totalDicek = this.totalDicek + parseInt(this.kelas[i].cekcount) ;
-            this.totalPersentase = this.totalPersentase + this.persentase[i];
+            this.totalPersentase = parseFloat(this.totalPersentase + this.persentase[i]).toFixed(2);
         }
+        this.totalPersentase2 = this.totalPersentase / this.kelas.length;
       })
       .catch();
   },
