@@ -33,7 +33,7 @@
                 <td align="center">Total</td>
                 <td align="center">{{total}}</td>
                 <td align="center">{{totalDicek}} Siswa</td>
-                <td align="center">{{totalPersentase}} %</td>
+                <td align="center">{{totalPersentase2}} %</td>
               </tr>
             </tbody>
           </table>
@@ -72,7 +72,9 @@ export default {
             this.totalDicek = this.totalDicek + parseInt(this.kelas[i].cekcount) ;
             this.totalPersentase = parseFloat(this.totalPersentase + this.persentase[i]).toFixed(2);
         }
-        this.totalPersentase2 = this.totalPersentase / this.kelas.length;
+        // this.totalPersentase2 = totalPersentase / this.kelas.length;
+        this.totalPersentase2 = parseFloat(this.totalPersentase / this.kelas.length).toFixed(2);
+      // })
       })
       .catch();
   },
