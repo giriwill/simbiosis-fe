@@ -73,7 +73,7 @@ export default {
             this.totalPersentase = parseFloat(this.totalPersentase + this.persentase[i]).toFixed(2);
         }
         // this.totalPersentase2 = totalPersentase / this.kelas.length;
-        this.totalPersentase2 = parseFloat(this.totalPersentase / this.kelas.length).toFixed(2);
+        this.totalPersentase2 = parseFloat((this.totalDicek/this.total)*100).toFixed(2);
       // })
       })
       .catch();
